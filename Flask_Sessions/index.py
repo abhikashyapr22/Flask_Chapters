@@ -20,7 +20,7 @@ def login():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
 
-    return render_template('form.html')
+    return render_template('index.html')
 
 
 @app.route('/logout')
@@ -28,8 +28,6 @@ def logout():
     session.pop('username', None)
     print("You are logged out")
     return "You are logged out <br><a href='/login'><b>Click here to login again </b></a>"
-
-    #redirect(url_for('index'))
 
 
 if __name__ == "__main__":
