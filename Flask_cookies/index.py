@@ -9,7 +9,7 @@ def index():
 
 
 @app.route('/setcookie', methods=['POST', 'GET'])
-def setCookie():
+def set_cookie():
     if request.method == "POST":
         user = request.form['nm']
         resp = make_response(render_template('readcookie.html', user=user))
@@ -18,7 +18,7 @@ def setCookie():
 
 
 @app.route('/getcookie')
-def getCookie():
+def get_cookie():
     name = request.cookies.get('userID')
     return '<h1> Welcome ' + name + '</h1>'
 

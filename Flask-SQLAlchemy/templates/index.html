@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask SQLAlchemy</title>
+</head>
+<body>
+<!--    <h3><a href="{{url_for('show_all')}}">See all data here</a></h3>-->
+    <h3>Current Data</h3>
+
+
+    <hr/>
+    {% for message in get_flashed_messages() %}
+        {{message}}
+    {% endfor %}
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Pin</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{student.name}}</td>
+                    <td>{{student.city}}</td>
+                    <td>{{student.addr}}</td>
+                    <td>{{student.pin}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3><a href="{{url_for('new')}}">add new record</a></h3>
+</body>
+</html>
