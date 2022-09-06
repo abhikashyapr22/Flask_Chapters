@@ -46,7 +46,10 @@ def new():
             flash('Record added successfully')
             #return redirect(url_for('show_all'))
 
-            return "<h4>Record added successfully <br>""<a href='/http://127.0.0.1:5000/show_all'}>See records here</a>""</h4> "
+            return """
+            Record added successfully
+            <h3><a href="{{url_for('show_all')}}">See here current data</a></h3>
+            """
 
     return render_template('new.html')
 
