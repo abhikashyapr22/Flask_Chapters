@@ -26,6 +26,9 @@ db.create_all()
 
 
 @app.route('/')
+def home():
+    return render_template('home.html')
+@app.route('/show')
 def show_all():
     return render_template('index.html', students=students.query.all())
 
@@ -44,12 +47,12 @@ def new():
             db.session.commit()
 
             flash('Record added successfully')
-            #return redirect(url_for('show_all'))
+            return redirect(url_for('home'))
 
-            return """
-            Record added successfully
-            <h3><a href="{{url_for('show_all')}}">See here current data</a></h3>
-            """
+            # return """
+            # Record added successfully
+            # <h3><a href="{{url_for('show_all')}}">See here current data</a></h3>
+            # """
 
     return render_template('new.html')
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask SQLAlchemy</title>
+</head>
+<body>
+  <h2>Flask SQLAlchemy</h2>
+  <hr/>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">{{message}}</div>
+    {% endfor %}
+  <div>
+    <p><a href="{{url_for('show_all')}}">See here current data</a></p>
+    <p><a href="{{url_for('new')}}">Add new record</a></p>
+  </div>
+</body>
+</html>
